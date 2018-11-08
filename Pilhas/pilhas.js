@@ -32,12 +32,24 @@ class Stack {
     }
 }
 
-const pilha = new Stack();
+function dec2Bin(decNumber) {
+    //Pilha de restos
+    const restStack = [];
+    let rest;
+    let binaryString = '';
 
-pilha.push(2);
-pilha.push(2);
-pilha.push(2);
-pilha.push(2);
-pilha.push(2);
-pilha.push(2);
-pilha.print();
+    while(decNumber > 0) {
+        //Arredondamento para baixo do resto de decNumber / 2
+        rest = Math.floor(decNumber % 2);
+        restStack.push(rest);
+        decNumber = Math.floor(decNumber / 2);
+    }
+
+    while(restStack.length > 0) {
+        binaryString += restStack.pop().toString(); 
+    }
+
+    return binaryString;
+}
+
+console.log(dec2Bin(25));
