@@ -6,7 +6,7 @@
      }
 
      //Adiciona um novo item
-     emqueue(element) {
+     enqueue(element) {
          this.items.push(element);
      }
 
@@ -37,3 +37,23 @@
          console.log(this.items.toString());
      }
  }
+
+ /** Teste da Class Queue */
+ const fila = new Queue();
+
+ fila.enqueue('João');
+ fila.enqueue('António');
+ fila.enqueue('Manuel');
+
+ fila.print(); //Output: João,António,Manuel
+
+ fila.dequeue();
+ fila.print(); //Output: António,Manuel
+
+ fila.dequeue();
+ fila.print(); //Output: Manuel
+
+ console.log(fila.isEmpty()); //Output: false
+ console.log(fila.size()); //Output: 1
+
+ 
