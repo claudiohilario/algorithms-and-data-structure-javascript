@@ -70,7 +70,7 @@
          this.items = [];
      }
 
-     enqueue(element, priority) { //João, 2
+     enqueue(element, priority) {
          const queueElement = new QueueElement(element, priority);
          let added = false;
 
@@ -100,14 +100,14 @@
 
  //Teste Rápido
 
- const pqueue = new PriorityQueue();
+//  const pqueue = new PriorityQueue();
 
- pqueue.enqueue('João', 2);
- pqueue.enqueue('António', 1);
- pqueue.enqueue('José', 3);
- pqueue.enqueue('Manuel', 1);
+//  pqueue.enqueue('João', 2);
+//  pqueue.enqueue('António', 1);
+//  pqueue.enqueue('José', 3);
+//  pqueue.enqueue('Manuel', 1);
 
- pqueue.print();
+//  pqueue.print();
  /**
   * Output:
   *     - António 1
@@ -115,3 +115,39 @@
   *     - João 2
   *     - José 3
   */
+
+  /**
+   * Exemplo do jogo da "Batata Quente"
+   */
+  function hotPotato(nameList, num) {
+      const queue = new Queue();
+
+      for(let i = 0; i < nameList.length; i++) {
+          queue.enqueue(nameList[i]);
+      }
+
+      let eliminated = '';
+
+      while(queue.size() > 1) {
+          for(let i = 0; i < num; i++ ) {
+              queue.enqueue(queue.dequeue());
+          }
+
+          eliminated = queue.dequeue();
+          console.log(`${eliminated} was eliminated from the Hot Potato Game!`)
+      }
+
+      return queue.dequeue();
+  }
+
+  const names = [
+      'António',
+      'João',
+      'Dulce',
+      'José',
+      'Maria',
+  ];
+
+  const winner = hotPotato(names, 7);
+console.log(`The winner is: ${winner}`);
+
