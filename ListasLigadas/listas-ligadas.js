@@ -11,8 +11,24 @@ class LinkedList {
         this.head = null;
     }
 
-    append(element) {
-        //Adiciona um elemento no final da lista
+    //Adiciona um elemento no final da lista
+    append(element) { 
+        const node = new Node(element);
+        let current; 
+
+        if(this.head === null) {
+            this.head = node; 
+        } else {
+            current = this.head
+
+            while(current.next) {
+                current = current.next;
+            }
+
+            current.next = node;
+        }
+
+        this.length++;
     }
 
     insert(position, element) {
@@ -31,7 +47,7 @@ class LinkedList {
         //Retorna a posição do elemento
     }
 
-    isEmpty() {
+    isEmpty() {//Imprime na consolang 
         //Retorna se está vazia ou não a instância
     }
 
@@ -39,11 +55,31 @@ class LinkedList {
         //Retorna o tamanho da instância 
     }
 
+    //Converte em string
     toString() {
-        //Converte em string
+        let current = this.head;
+        let string = '';
+
+        while(current) {
+            string += `${current.element} `;
+            current = current.next;
+        }
+
+        return string;
     }
 
+    //Imprime na consola
     print() {
-        //Imprime na consola
+        console.log(this.toString());
     }
 }
+
+//Testes Iniciais
+
+const ll = new LinkedList();
+
+ll.append('Claudio')
+ll.append('Daniel')
+ll.append('José')
+
+ll.print() // Output: Claudio Daniel José
