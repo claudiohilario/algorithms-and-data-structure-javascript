@@ -5,27 +5,35 @@
          this.items = [];
      }
 
-     emqueue() {
-         //Adiciona um novo item
+     //Adiciona um novo item
+     emqueue(element) {
+         this.items.push(element);
      }
 
+     //Remove um item
      dequeue() {
-         //Remove um item
+         return this.items.shift();
      }
 
+     //Retorna o primeiro elemento da fila.
      front() {
-         //Torna o primeiro elemento da fila.
+         const firstElement = 0;
+         return this.items[firstElement];
      }
 
+     //Verifica se a fila está vazia ou não
      isEmpty() {
-         //Verifica se a fila está vazia ou não
+         const arraySize = this.items.length;
+         return arraySize === 0;
      }
 
+     //Retorna o tamanho da fila 
      size() {
-         //Retorna o tamanho da fila 
+         return this.items.length;
      }
 
+     //Imprimir a fila no console
      print() {
-         //Imprimir a fila no console
+         console.log(this.items.toString());
      }
  }
