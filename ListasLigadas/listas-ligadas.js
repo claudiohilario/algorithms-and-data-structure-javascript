@@ -102,4 +102,4 @@ ll.append('Claudio')
 ll.append('Daniel')
 ll.append('José')
 ll.print() // Output: Claudio Daniel José
-console.log(`Foi removido: ${ll.removeAt(0)}`);
+console.log(`Foi removido: ${ll.removeAt(0)}`); // Foi removido Cláudio
