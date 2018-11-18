@@ -81,8 +81,10 @@ class LinkedList {
         }
     }
 
+    // Remove o elemento element
     remove(element) {
-        // Remove o elemento element
+        const index = this.indexOf(element);
+        return this.removeAt(index);
     }
 
     //Retorna a posição do elemento
@@ -146,3 +148,10 @@ ll.print() // Output: António Daniel Ana José Claudio
 console.log(ll.indexOf('António')) //Output: 0
 console.log(ll.indexOf('Daniel')) //Output: 1
 console.log(ll.indexOf('Claudio')) //Output: 4
+
+ll.print(); //Output: António Daniel Ana José Claudio
+ll.remove('Daniel');
+ll.print(); //Output: António Ana José Claudio
+ll.remove('José');
+ll.print(); //Output: António Ana Claudio
+
