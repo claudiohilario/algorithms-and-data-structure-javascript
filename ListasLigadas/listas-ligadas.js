@@ -85,8 +85,19 @@ class LinkedList {
         // Remove o elemento element
     }
 
+    //Retorna a posição do elemento
     indexOf(element) {
-        //Retorna a posição do elemento
+        let current = this.head;
+        let index = 0;
+        
+        while(current) {
+            if(element === current.element) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
     }
 
     isEmpty() {//Imprime na consolang 
@@ -131,3 +142,7 @@ ll.insert(0, 'António');
 ll.print() // Output: António Daniel José Claudio
 ll.insert(2, 'Ana');
 ll.print() // Output: António Daniel Ana José Claudio
+
+console.log(ll.indexOf('António')) //Output: 0
+console.log(ll.indexOf('Daniel')) //Output: 1
+console.log(ll.indexOf('Claudio')) //Output: 4
