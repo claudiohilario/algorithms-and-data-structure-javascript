@@ -30,9 +30,31 @@ class LinkedList {
 
         this.length++;
     }
-
+    
+    //Adiciona um elemento em uma posição especifica.
     insert(position, element) {
-        //Adiciona um elemento em uma posição especifica.
+        if(position >= 0 && position <= this.length) {
+            const node = new Node(element);
+            let current = this.head;
+            let previous;
+            let index = 0;
+
+            if(position === 0) {
+                node.next = current;
+                this.head = node;
+            } else {
+                while(index++ < position) {
+                    previous = current;
+                    current = current.next;
+                }
+                node.next = current;
+                previous.next = node;
+            }
+            this.length++;
+            return true;
+        } else {
+            return false;
+        }    
     }
 
     //Remove o elemento de uma posiçºao especifica
@@ -103,3 +125,9 @@ ll.append('Daniel')
 ll.append('José')
 ll.print() // Output: Claudio Daniel José
 console.log(`Foi removido: ${ll.removeAt(0)}`); // Foi removido Cláudio
+ll.append('Claudio')
+ll.print() // Output: Daniel José Claudio
+ll.insert(0, 'António');
+ll.print() // Output: António Daniel José Claudio
+ll.insert(2, 'Ana');
+ll.print() // Output: António Daniel Ana José Claudio
