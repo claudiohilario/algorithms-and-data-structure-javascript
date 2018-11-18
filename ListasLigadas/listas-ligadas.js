@@ -102,12 +102,19 @@ class LinkedList {
         return -1;
     }
 
-    isEmpty() {//Imprime na consolang 
-        //Retorna se está vazia ou não a instância
+    //Retorna se está vazia ou não a instância
+    isEmpty() {
+        return this.length === 0;
     }
 
+    //Retorna o tamanho da instância 
     size() {
-        //Retorna o tamanho da instância 
+        return this.length;
+    }
+
+    // Retorna o primeiro elemento da lista
+    getHead() {
+        return this.head;
     }
 
     //Converte em string
@@ -154,4 +161,22 @@ ll.remove('Daniel');
 ll.print(); //Output: António Ana José Claudio
 ll.remove('José');
 ll.print(); //Output: António Ana Claudio
+
+console.log(ll.isEmpty()); //Output: false;
+console.log(ll.size()); //Output: 3;
+console.log(ll.getHead());
+/**
+ * Output:
+ * Node {
+ *  element: 'António',
+ *  next: Node {
+ *    element: 'Ana',
+ *    next: Node { 
+ *      element: 'Claudio',
+ *       next: null 
+ *     } 
+ *   } 
+ * }
+ */
+
 
