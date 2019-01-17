@@ -1,5 +1,5 @@
 function Dicionary() {
-  const items = {};
+  let items = {};
 
   /**
    * Permite adicionar um novo item ao dicionário.
@@ -68,4 +68,30 @@ function Dicionary() {
 
     return values;
   };
+
+  this.getItems = function() {
+    return items;
+  };
 }
+
+const dici = new Dicionary();
+
+dici.set("Test", "test@example.com");
+dici.set("Test1", "test1@example.com");
+dici.set("Test2", "test2@example.com");
+
+console.log(dici.has("Test1")); // true
+console.log(dici.has("xxx")); // false
+
+console.log(dici.size()); // 3
+
+console.log(dici.get("Test")); // test@example.com
+
+console.log(dici.keys()); // [ 'Test', 'Test1', 'Test2' ]
+
+console.log(dici.values()); // [ 'test@example.com', 'test1@example.com', 'test2@example.com' ]
+
+console.log(dici.delete("Test")); // true
+console.log(dici.getItems()); // { Test1: 'test1@example.com', Test2: 'test2@example.com' }
+
+console.log(dici.clear()); //undefined
