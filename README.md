@@ -1,2 +1,1 @@
-# algoritmos-e-estrutura-de-dados-javascript
-Algoritmos e estrutura de dados em javascript
+# Algorithms and data structures in javascript
