@@ -11,7 +11,7 @@ class LinkedList {
         this.head = null;
     }
 
-    //Adiciona um elemento no final da lista
+    //Adds an element to the end of the list
     append(element) { 
         const node = new Node(element);
         let current; 
@@ -31,7 +31,7 @@ class LinkedList {
         this.length++;
     }
     
-    //Adiciona um elemento em uma posição especifica.
+    //Adds an element at a specific position.
     insert(position, element) {
         if(position >= 0 && position <= this.length) {
             const node = new Node(element);
@@ -57,7 +57,7 @@ class LinkedList {
         }    
     }
 
-    //Remove o elemento de uma posiçºao especifica
+    //Removes the element from a specific position
     removeAt(position) {
         if(position > -1 && position < this.length) {
             let current = this.head;
@@ -81,13 +81,13 @@ class LinkedList {
         }
     }
 
-    // Remove o elemento element
+    //Removes the specific element
     remove(element) {
         const index = this.indexOf(element);
         return this.removeAt(index);
     }
 
-    //Retorna a posição do elemento
+    //Returns the position of the element
     indexOf(element) {
         let current = this.head;
         let index = 0;
@@ -102,17 +102,17 @@ class LinkedList {
         return -1;
     }
 
-    //Retorna se está vazia ou não a instância
+    //Returns whether the instance is empty or not
     isEmpty() {
         return this.length === 0;
     }
 
-    //Retorna o tamanho da instância 
+    //Returns the size of the instance 
     size() {
         return this.length;
     }
 
-    // Retorna o primeiro elemento da lista
+    // Returns the first element of the list
     getHead() {
         return this.head;
     }

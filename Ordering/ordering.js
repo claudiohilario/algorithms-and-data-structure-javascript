@@ -21,7 +21,7 @@ class ArrayList {
         }
     }
 
-    // Troca de valores do index 1 com index 2
+    // Exchange of values ​​from index 1 to index 2
     swap(array, index1, index2) {
         const aux = array[index1];
         array[index1] = array[index1]

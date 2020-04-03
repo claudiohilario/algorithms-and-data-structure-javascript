@@ -33,13 +33,11 @@ class Stack {
 }
 
 function dec2Bin(decNumber) {
-    //Pilha de restos
     const restStack = [];
     let rest;
     let binaryString = '';
 
     while(decNumber > 0) {
-        //Arredondamento para baixo do resto de decNumber / 2
         rest = Math.floor(decNumber % 2);
         restStack.push(rest);
         decNumber = Math.floor(decNumber / 2);

@@ -5,58 +5,50 @@
          this.items = [];
      }
 
-     //Adiciona um novo item
      enqueue(element) {
          this.items.push(element);
      }
 
-     //Remove um item
      dequeue() {
          return this.items.shift();
      }
 
-     //Retorna o primeiro elemento da fila.
      front() {
          const firstElement = 0;
          return this.items[firstElement];
      }
 
-     //Verifica se a fila está vazia ou não
      isEmpty() {
          const arraySize = this.items.length;
          return arraySize === 0;
      }
 
-     //Retorna o tamanho da fila 
      size() {
          return this.items.length;
      }
 
-     //Imprimir a fila no console
      print() {
          console.log(this.items.toString());
      }
  }
 
- /** Teste da Class Queue */
-//  const fila = new Queue();
+//  const queue = new Queue();
 
-//  fila.enqueue('João');
-//  fila.enqueue('António');
-//  fila.enqueue('Manuel');
+//  queue.enqueue('João');
+//  queue.enqueue('António');
+//  queue.enqueue('Manuel');
 
-//  fila.print(); //Output: João,António,Manuel
+//  queue.print(); //Output: João,António,Manuel
 
-//  fila.dequeue();
-//  fila.print(); //Output: António,Manuel
+//  queue.dequeue();
+//  queue.print(); //Output: António,Manuel
 
-//  fila.dequeue();
-//  fila.print(); //Output: Manuel
+//  queue.dequeue();
+//  queue.print(); //Output: Manuel
 
-//  console.log(fila.isEmpty()); //Output: false
-//  console.log(fila.size()); //Output: 1
+//  console.log(queue.isEmpty()); //Output: false
+//  console.log(queue.size()); //Output: 1
 
- /** Fila de prioridades */
  
  class QueueElement {
     constructor(element, priority) {
@@ -98,8 +90,6 @@
      }
  }
 
- //Teste Rápido
-
 //  const pqueue = new PriorityQueue();
 
 //  pqueue.enqueue('João', 2);
@@ -117,7 +107,7 @@
   */
 
   /**
-   * Exemplo do jogo da "Batata Quente"
+   * Other Example
    */
   function hotPotato(nameList, num) {
       const queue = new Queue();
@@ -149,5 +139,5 @@
   ];
 
   const winner = hotPotato(names, 7);
-console.log(`The winner is: ${winner}`);
+  console.log(`The winner is: ${winner}`);
 
